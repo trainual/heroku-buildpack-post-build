@@ -5,11 +5,12 @@ set -euo pipefail
 readonly BUILD_DIR=$1
 
 if [[ ! -n "${BUILD_DIR}" ]]; then
-  echo "No build directory specified - exiting"
+  echo "No build directory specified. Exiting."
   exit 1
 fi
 
 cd ${BUILD_DIR}
 
-# Delete node_modules contents, but skip bootstrap/ dir.
-find ./node_modules/* -type f -o -type d -not -name 'bootstrap' -delete
+echo "*** Deleting node_modules contents, but skipping /bootstrap/ dir."
+
+find ./node_modules/* -type f -o -type d -not -name 'bootstrap' -exec rm -r {} +
