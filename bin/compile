@@ -13,4 +13,4 @@ cd ${BUILD_DIR}
 
 echo "*** Deleting node_modules contents, but skipping /bootstrap/ dir."
 
-find ./node_modules/* -path '*/.*' -type f -o -type d -not -name 'bootstrap' -print0 | xargs -0 -I {} rm -rf {}
+find ./node_modules/* -path '*/.*' -type f -o -type d -not -name 'bootstrap' -print0 | xargs -0 -I {} rm -rf {} > /dev/null 2>&1;
