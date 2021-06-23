@@ -16,3 +16,5 @@ echo "*** Deleting node_modules contents, but skipping /bootstrap/ dir."
 shopt -s extglob
 rm -r node_modules/!(bootstrap)/
 
+# If you ever need to use Extended Globs on MacOS in zsh, the command is:
+#   $ setopt extended_glob
