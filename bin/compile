@@ -13,4 +13,7 @@ cd ${BUILD_DIR}
 
 echo "*** Deleting node_modules contents, but skipping /bootstrap/ dir."
 
-find ./node_modules -mindepth 1 ! -regex '^./node_modules/bootstrap\(/.*\)?' -delete
+shopt -s extglob
+rm -r node_modules/!(bootstrap)/
+
+# find ./node_modules -mindepth 1 ! -regex '^./node_modules/bootstrap\(/.*\)?' -delete
